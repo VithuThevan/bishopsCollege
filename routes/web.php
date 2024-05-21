@@ -7,18 +7,20 @@ use App\Http\Controllers\TestController;
 
 use Illuminate\Support\Facades\Route;
 
+
+//frontend
 Route::get('/', function () {
     return view('frontend.form');
 });
 
-Route::post('/products/create', [App\Http\Controllers\donorController::class, 'store']);
+Route::get('/list1', [donorController::class, 'index'])->middleware(['auth','verified'])->name('list1');
 
+//backend
+Route::post('/products/create', [App\Http\Controllers\donorController::class, 'store']);
 Route::post('/page1', [App\Http\Controllers\donorController::class, 'store2']);
 Route::get('/page2', [App\Http\Controllers\donorController::class, 'store3'])->name('page2');
-
 Route::post('/products/response', [App\Http\Controllers\donorController::class, 'display']);
 
-Route::get('/list1', [App\Http\Controllers\donorController::class, 'index'])->name('list1');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
