@@ -12,8 +12,11 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('frontend.form');
 });
+Route::get('/karan', function () {
+    return view('frontend.form');
+});
 
-Route::get('/list1', [donorController::class, 'index'])->middleware(['auth','verified'])->name('list1');
+Route::get('/adminpanel', [donorController::class, 'index'])->middleware(['auth','verified'])->name('list1');
 
 //backend
 Route::post('/products/create', [App\Http\Controllers\donorController::class, 'store']);

@@ -22,31 +22,32 @@
             <div class="col-md-6">
               <div class="form-group">
                 <label htmlFor="name">Donor's Name</label>
-                <input type="text" class="form-control" name="donorName" placeholder="Enter your name" />
+                <input type="text" class="form-control" name="donorName" placeholder="Enter your name" required />
               </div>
             </div>
             <div class="col-md-6">
               <div class="form-group">
                 <label htmlFor="email">Donor's Email</label>
-                <input type="email" class="form-control" name="donorEmail" placeholder="Enter your email" />
+                <input type="email" class="form-control" name="donorEmail" placeholder="Enter your email" required />
               </div>
             </div>
             <div class="col-md-6 mt-2">
               <div class="form-group">
                 <label htmlFor="email">Donor's Contact Number</label>
-                <input type="number" class="form-control" name="donorPhone" placeholder="Enter your contact number" />
+                <input type="number" class="form-control" name="donorPhone" placeholder="Enter your contact number"
+                  required />
               </div>
             </div>
             <div class="col-md-6 mt-2">
               <div class="form-group">
                 <label htmlFor="email">Donor's Address</label>
-                <input type="text" class="form-control" name="donorAddress" placeholder="Enter your email" />
+                <input type="text" class="form-control" name="donorAddress" placeholder="Enter your email" required />
               </div>
             </div>
             <div class="col-md-6 mt-2">
               <div class="form-group">
                 <label htmlFor="email">I am a ...</label>
-                <select class="form-control form-select" name="donorType">
+                <select class="form-control form-select" name="donorType" required>
                   <option selected>Select</option>
                   <option value="PTA Member">PTA Member</option>
                   <option value="PPA Member">PPA Member</option>
@@ -61,7 +62,7 @@
             <div class="col-md-6 mt-2">
               <div class="form-group">
                 <label htmlFor="email">Type of Donation</label>
-                <select class="form-control form-select" name="donationType" id="donationType"
+                <select class="form-control form-select" name="donationType" id="donationType" required
                   onchange="updatePurposeOptions()">
                   <option selected>Select</option>
                   <option value="School">School</option>
@@ -75,7 +76,7 @@
             <div class="col-md-6 mt-2">
               <div class="form-group">
                 <label htmlFor="email">Purpose of Donation</label>
-                <select class="form-control form-select" name="donationPurpose" id="donationPurpose">
+                <select class="form-control form-select" name="donationPurpose" id="donationPurpose" required>
                   <option selected>Select</option>
                 </select>
               </div>
@@ -83,26 +84,28 @@
             <div class="col-md-6 mt-2">
               <div class="form-group">
                 <label htmlFor="email">Student's Name</label>
-                <input type="text" class="form-control" name="studentname" placeholder="Enter your email" />
+                <input type="text" class="form-control" name="studentname" placeholder="Enter your email" required />
               </div>
             </div>
             <div class="col-md-6 mt-2">
               <div class="form-group">
                 <label htmlFor="email">Student's Admission Number</label>
-                <input type="text" class="form-control" name="admissionno" placeholder="Enter Student's Name" />
+                <input type="text" class="form-control" name="admissionno" placeholder="Enter Student's Name"
+                  required />
               </div>
             </div>
             <div class="col-md-6 mt-2">
               <div class="form-group">
                 <label htmlFor="email">Student's Grade</label>
-                <input type="number" class="form-control" name="studentGrade" placeholder="Enter Student's Grade" />
+                <input type="number" class="form-control" name="studentGrade" placeholder="Enter Student's Grade"
+                  required />
               </div>
             </div>
             <div class="col-md-6 mt-2">
               <div class="form-group">
                 <label htmlFor="email">Donation Amount</label>
-                <input type="number" class="form-control" name="amount"
-                  placeholder="Enter Student's Donation Amount" />
+                <input type="number" class="form-control" name="amount" placeholder="Enter Student's Donation Amount"
+                  required />
               </div>
             </div>
           </div>
