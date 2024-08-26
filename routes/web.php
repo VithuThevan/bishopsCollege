@@ -12,9 +12,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('frontend.form');
 });
-Route::get('/karan', function () {
-    return view('frontend.form');
-});
+
 
 Route::get('/adminpanel', [donorController::class, 'index'])->middleware(['auth','verified'])->name('list1');
 

@@ -11,21 +11,21 @@
           <input type="hidden" name="profile_id" value="{{env('PROFILE_ID')}}">
           <input type="hidden" name="transaction_uuid" value="<?php echo uniqid() ?>">
           <input type="hidden" name="reference_number" value="1716203302803">
-          <input type="hidden" name="signed_field_names"
-            value="access_key,profile_id,transaction_uuid,signed_field_names,signed_date_time,bill_to_email,bill_to_forename,bill_to_phone,bill_to_surname,locale,bill_to_address_state,bill_to_address_country,transaction_type,reference_number,amount,currency,bill_to_address_city,bill_to_address_line1">
+          <input type="hidden" name="signed_field_names" value="access_key,profile_id,transaction_uuid,signed_field_names,bill_to_address_postal_code,signed_date_time,bill_to_email,bill_to_forename,bill_to_phone,bill_to_surname,locale,bill_to_address_state,bill_to_address_country,transaction_type,reference_number,amount,currency,bill_to_address_city,bill_to_address_line1">
           <input type="hidden" name="signed_date_time" value="<?php echo gmdate("Y-m-d\TH:i:s\Z"); ?>">
           <input type="hidden" name="unsigned_field_names">
           <input type="hidden" name="locale" value="en">
           <input type="hidden" name="currency" value="USD">
           <input type="hidden" name="transaction_type" value="authorization">
-          <input type="hidden" name="bill_to_address_city" value="Bishops">
-          <input type="hidden" name="bill_to_address_line1" value="College">
-          <input type="hidden" name="bill_to_address_state" value="CA">
-          <input type="hidden" name="bill_to_address_country" value="SL">
+          <input type="hidden" name="bill_to_address_city" value="Colombo">
+          <input type="hidden" name="bill_to_address_line1" value="15 Boyd Place">
+          <input type="hidden" name="bill_to_address_state" value="LK-11">
+          <input type="hidden" name="bill_to_address_country" value="LK">
           <input type="hidden" name="bill_to_email" value="dummy@email.com">
-          <input type="hidden" name="bill_to_forename" value="Bishops">
-          <input type="hidden" name="bill_to_phone" value="123456789">
-          <input type="hidden" name="bill_to_surname" value="USD">
+          <input type="hidden" name="bill_to_address_postal_code" value="00300">
+          <input type="hidden" name="bill_to_forename" value="James">
+          <input type="hidden" name="bill_to_phone" value="0112422691">
+          <input type="hidden" name="bill_to_surname" value="Chapman">
           <input type="hidden" name="card_type" value="001">
           <div class="row">
             <div class="col-md-6">
