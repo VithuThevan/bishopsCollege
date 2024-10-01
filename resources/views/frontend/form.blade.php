@@ -16,7 +16,7 @@
           <input type="hidden" name="unsigned_field_names">
           <input type="hidden" name="locale" value="en">
           <input type="hidden" name="currency" value="USD">
-          <input type="hidden" name="transaction_type" value="salw">
+          <input type="hidden" name="transaction_type" value="sale">
           <input type="hidden" name="bill_to_address_city" value="Colombo">
           <input type="hidden" name="bill_to_address_line1" value="15 Boyd Place">
           <input type="hidden" name="bill_to_address_state" value="LK-11">
