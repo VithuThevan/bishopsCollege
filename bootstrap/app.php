@@ -12,8 +12,9 @@ return Application::configure(basePath: dirname(__DIR__))
     )
     ->withMiddleware(function (Middleware $middleware) {
         $middleware->validateCsrfTokens(except: [
-            'http://localhost:8080/products/response',
-            'http://testsecureacceptance.cybersource.com/pay'
+            '*/products/response',
+            'http://testsecureacceptance.cybersource.com/pay',
+            '*/payment-result',
         ]);
     })
     ->withExceptions(function (Exceptions $exceptions) {

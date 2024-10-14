@@ -6,14 +6,19 @@ use App\Helpers\CyberSourceHelper;
 use App\Models\donors;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\sendEmail;
+use Illuminate\Support\Facades\Cookie;
 
 use Illuminate\Http\Request;
+use Redirect;
 
 class donorController extends Controller
 {
-    public function index()
+    public $donor = [];
+    public function index(Request $request)
     {
-        $donors = donors::all();
+        $itemsPerPage = $request->query('itemsPerPage', 10);
+
+        $donors = donors::paginate($itemsPerPage);
 
         if ($donors->isEmpty()) {
             return response()->json([
@@ -24,21 +29,45 @@ class donorController extends Controller
         }
     }
 
-    public function store(Request $request)
-    {
-        $title = "Welcome to Funny Coder";
-        Mail::to('vithursan1003@gmail.com')->send(new sendEmail($title, json_encode($request->all())));
-        return "Email sent successfully";
-    }
-
     public function store2(Request $request)
     {
+
+        $donorData = $request->validate([
+            'donorName' => 'required|string|max:255',
+            'donorEmail' => 'required|email',
+            'donorPhone' => 'required|string|max:15', // Validate the phone field
+            'donorAddress' => 'required|string|max:255',
+            'donorType' => 'required|string|max:255',
+            'donationType' => 'required|string|max:255',
+            'donationPurpose' => 'required|string|max:255',
+            'amount' => 'required|numeric',
+        ]);
+
         return redirect()->route('page2', ['data' => $request->all()]);
     }
+
+    public function handlePayment(Request $request)
+    {
+        // if ($request->input('decision') == 'ACCEPT') {
+        //     Redirect::to('https://www.bishopscollege.lk/thank-you/')->send();
+        // } else {
+        //     Redirect::to('https://www.bishopscollege.lk/transaction-unsuccessful/')->send();
+        // }
+
+        if ($request->input('decision') != 'ACCEPT') {
+            Redirect::to('https://www.bishopscollege.lk/transaction-unsuccessful/')->send();
+        } else {
+            Redirect::to('https://www.bishopscollege.lk/thank-you/')->send();
+        }
+
+
+    }
+
 
     public function store3(Request $request)
     {
         $data = $request->all();
+        $dataFields = $data['data'];
         $signature = CyberSourceHelper::sign($data);
         return view('page2', compact('data', 'signature'));
     }

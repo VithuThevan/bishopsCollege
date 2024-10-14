@@ -9,7 +9,8 @@ class donors extends Model
 {
     protected $table = 'donors';
     protected $fillable = [
-        'donorName',
+        'firstname',
+        'lastname',
         'donorEmail',
         'donorPhone',
         'donorAddress',
@@ -17,5 +18,9 @@ class donors extends Model
         'donationType',
         'donationPurpose',
         'donationAmount',
+        'signature',
+        'studentname',
+        'admissionno',
+        'studentGrade',
     ];
 }

@@ -4,6 +4,7 @@ use App\Http\Controllers\donorController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\MailController;
 use App\Http\Controllers\TestController;
+use App\Http\Controllers\PaymentController;
 
 use Illuminate\Support\Facades\Route;
 
@@ -17,7 +18,8 @@ Route::get('/', function () {
 Route::get('/adminpanel', [donorController::class, 'index'])->middleware(['auth','verified'])->name('list1');
 
 //backend
-Route::post('/products/create', [App\Http\Controllers\donorController::class, 'store']);
+Route::post('/payment-result', [donorController::class, 'handlePayment'])->name('payment.result');
+Route::post('/create', [App\Http\Controllers\donorController::class, 'store']);
 Route::post('/page1', [App\Http\Controllers\donorController::class, 'store2']);
 Route::get('/page2', [App\Http\Controllers\donorController::class, 'store3'])->name('page2');
 Route::post('/products/response', [App\Http\Controllers\donorController::class, 'display']);
