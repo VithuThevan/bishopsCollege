@@ -43,17 +43,14 @@ class donorController extends Controller
             'amount' => 'required|numeric',
         ]);
 
+        // $donors = donors::create(attributes: $donorData);
+
         return redirect()->route('page2', ['data' => $request->all()]);
     }
 
     public function handlePayment(Request $request)
     {
-        // if ($request->input('decision') == 'ACCEPT') {
-        //     Redirect::to('https://www.bishopscollege.lk/thank-you/')->send();
-        // } else {
-        //     Redirect::to('https://www.bishopscollege.lk/transaction-unsuccessful/')->send();
-        // }
-
+        
         if ($request->input('decision') != 'ACCEPT') {
             Redirect::to('https://www.bishopscollege.lk/transaction-unsuccessful/')->send();
         } else {

@@ -16,7 +16,7 @@ class TestController extends Controller
     public function processPayment(Request $request)
     {
         // Send the data to the external API
-        $response = Http::post('https://testsecureacceptance.cybersource.com/pay', $request->all());
+        $response = Http::post('https://secureacceptance.cybersource.com/pay', $request->all());
 
         // Handle the response
         if ($response->successful()) {
