@@ -123,4 +123,9 @@ return [
         'store' => env('APP_MAINTENANCE_STORE', 'database'),
     ],
 
+    'ACCESS_KEY' => env('ACCESS_KEY'),
+    'SECRET_KEY' => env('SECRET_KEY'),
+    'PROFILE_ID' => env('PROFILE_ID'),
+    'HMAC_SHA256' => env('HMAC_SHA256'),
+
 ];

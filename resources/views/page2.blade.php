@@ -1,7 +1,7 @@
 <x-app-web-layout>
     <div class="container mt-5">
         <h1 class="text-center">Review Payment Details</h1>
-        <form id="payment_confirmation" action="https://testsecureacceptance.cybersource.com/pay" method="post">
+        <form id="payment_confirmation" action="https://secureacceptance.cybersource.com/pay" method="post">
             <fieldset id="confirmation">
                 <div class="row">
                     @php
@@ -63,14 +63,4 @@
         </form>
     </div>
 </x-app-web-layout>
-
-<script>
-    const signature = '{{ $signature }}';
-    console.log("Signature:", signature);
-
-    function sign(data) {
-        // Placeholder for the actual signature generation
-        return 'dummy-signature';
-    }
-</script>
 

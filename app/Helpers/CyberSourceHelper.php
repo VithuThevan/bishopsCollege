@@ -11,8 +11,8 @@ class CyberSourceHelper
     public static function sign($params)
     {
         $buildDataToSign = self::buildDataToSign($params);
-        $hmacSha256 = env(self::HMAC_SHA256);
-        $secretKey = env(self::SECRET_KEY);
+        $hmacSha256 = config('app.HMAC_SHA256');
+        $secretKey = config('app.SECRET_KEY');
         $baseEncode = base64_encode(hash_hmac($hmacSha256, $buildDataToSign, $secretKey, true));
         return $baseEncode;
     }

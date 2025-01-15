@@ -3,23 +3,25 @@
   <div class="container mt-5">
     <div class="card">
       <div class="card-header text-center text-white" style="background-color: #431F50;">
-        <img src="{{ asset('https://www.bishopscollege.lk/wp-content/uploads/2023/07/logo.webp') }}" alt="Logo" width="20%" />
+        <img src="{{ asset('https://www.bishopscollege.lk/wp-content/uploads/2023/07/logo.webp') }}" alt="Logo"
+          width="20%" />
         <h3>Donations</h3>
       </div>
       <div class="card-body">
         <form action="{{url('/page1')}}" method="POST" onsubmit="assignValues()">
           @csrf
-          
+
           <!-- Hidden Fields for Payment -->
           <input type="hidden" name="override_custom_receipt_page" value="{{ route('payment.result') }}">
-          <input type="hidden" name="access_key" value="{{env('ACCESS_KEY')}}">
-          <input type="hidden" name="profile_id" value="{{env('PROFILE_ID')}}">
+          <input type="hidden" name="access_key" value="{{config('app.ACCESS_KEY')}}">
+          <input type="hidden" name="profile_id" value="{{config('app.PROFILE_ID')}}">
           <input type="hidden" name="transaction_uuid" value="<?php echo uniqid() ?>">
           <input type="hidden" name="reference_number" value="1716203302803">
-          <input type="hidden" name="signed_field_names" value="access_key,profile_id,transaction_uuid,override_custom_receipt_page,signed_field_names,bill_to_address_postal_code,signed_date_time,bill_to_email,bill_to_forename,bill_to_phone,bill_to_surname,locale,bill_to_address_state,bill_to_address_country,transaction_type,reference_number,amount,currency,bill_to_address_city,bill_to_address_line1">
+          <input type="hidden" name="signed_field_names"
+            value="access_key,profile_id,transaction_uuid,override_custom_receipt_page,signed_field_names,bill_to_address_postal_code,signed_date_time,bill_to_email,bill_to_forename,bill_to_phone,bill_to_surname,locale,bill_to_address_state,bill_to_address_country,transaction_type,reference_number,amount,currency,bill_to_address_city,bill_to_address_line1">
           <input type="hidden" name="signed_date_time" value="<?php echo gmdate("Y-m-d\TH:i:s\Z"); ?>">
           <input type="hidden" name="locale" value="en">
-          <input type="hidden" name="currency" value="USD">
+          <input type="hidden" name="currency" value="LKR">
           <input type="hidden" name="transaction_type" value="sale">
           <input type="hidden" name="bill_to_address_city" value="Colombo">
           <input type="hidden" name="bill_to_address_line1" id="bill_to_address_line1" value="">
@@ -43,14 +45,16 @@
                 <div class="col-md-6">
                   <div class="form-group">
                     <label for="donorName">First Name</label>
-                    <input type="text" class="form-control" id="donorName" name="donorName" placeholder="Enter your first name" required />
+                    <input type="text" class="form-control" id="donorName" name="donorName"
+                      placeholder="Enter your first name" required />
                   </div>
                 </div>
 
                 <div class="col-md-6">
                   <div class="form-group">
                     <label for="donorName1">Last Name</label>
-                    <input type="text" class="form-control" id="donorName1" name="donorName1" placeholder="Enter your last name" required />
+                    <input type="text" class="form-control" id="donorName1" name="donorName1"
+                      placeholder="Enter your last name" required />
                   </div>
                 </div>
 
@@ -58,7 +62,8 @@
                 <div class="col-md-6">
                   <div class="form-group">
                     <label for="donorEmail">Email</label>
-                    <input type="email" class="form-control" id="donorEmail" name="donorEmail" placeholder="Enter your email" required />
+                    <input type="email" class="form-control" id="donorEmail" name="donorEmail"
+                      placeholder="Enter your email" required />
                   </div>
                 </div>
 
@@ -66,7 +71,8 @@
                 <div class="col-md-6 mt-2">
                   <div class="form-group">
                     <label for="donorPhone">Contact Number</label>
-                    <input type="number" class="form-control" id="donorPhone" name="donorPhone" placeholder="Enter your contact number" required />
+                    <input type="number" class="form-control" id="donorPhone" name="donorPhone"
+                      placeholder="Enter your contact number" required />
                   </div>
                 </div>
 
@@ -74,7 +80,8 @@
                 <div class="col-md-6 mt-2">
                   <div class="form-group">
                     <label for="donorAddress">Address</label>
-                    <input type="text" class="form-control" id="donorAddress" name="donorAddress" placeholder="Enter your address" required />
+                    <input type="text" class="form-control" id="donorAddress" name="donorAddress"
+                      placeholder="Enter your address" required />
                   </div>
                 </div>
               </div>
@@ -106,7 +113,8 @@
                 <div class="col-md-6 mt-2">
                   <div class="form-group">
                     <label for="donationType">Type of Donation</label>
-                    <select class="form-control form-select" name="donationType" id="donationType" required onchange="updatePurposeOptions()">
+                    <select class="form-control form-select" name="donationType" id="donationType" required
+                      onchange="updatePurposeOptions()">
                       <option selected>Select</option>
                       <option value="School">School</option>
                       <option value="Hostel">Hostel</option>
@@ -129,7 +137,8 @@
                 <div class="col-md-6 mt-2">
                   <div class="form-group">
                     <label for="donationAmount">Donation Amount</label>
-                    <input type="number" class="form-control" name="amount" placeholder="Enter donation amount" required />
+                    <input type="number" class="form-control" name="amount" placeholder="Enter donation amount"
+                      required />
                   </div>
                 </div>
               </div>
@@ -147,7 +156,7 @@
                 <div class="col-md-6 mt-2">
                   <div class="form-group">
                     <label for="studentName">Student's Name</label>
-                    <input type="text" class="form-control" name="studentname" placeholder="Enter student's name"  />
+                    <input type="text" class="form-control" name="studentname" placeholder="Enter student's name" />
                   </div>
                 </div>
 
@@ -155,7 +164,8 @@
                 <div class="col-md-6 mt-2">
                   <div class="form-group">
                     <label for="admissionno">Student's Admission Number</label>
-                    <input type="text" class="form-control" name="admissionno" placeholder="Enter student's admission number"  />
+                    <input type="text" class="form-control" name="admissionno"
+                      placeholder="Enter student's admission number" />
                   </div>
                 </div>
 
@@ -163,7 +173,7 @@
                 <div class="col-md-6 mt-2">
                   <div class="form-group">
                     <label for="studentGrade">Student's Grade</label>
-                    <input type="number" class="form-control" name="studentGrade" placeholder="Enter student's grade"  />
+                    <input type="number" class="form-control" name="studentGrade" placeholder="Enter student's grade" />
                   </div>
                 </div>
               </div>
@@ -189,7 +199,7 @@
     const donorEmail = document.getElementById('donorEmail').value;
     const donorPhone = document.getElementById('donorPhone').value;
     const donorAddress = document.getElementById('donorAddress').value;
-    const donorName1 =document.getElementById('donorName1').value;
+    const donorName1 = document.getElementById('donorName1').value;
 
     // Assign to hidden fields
     document.getElementById('bill_to_forename').value = donorName;
@@ -214,10 +224,10 @@
       options = ["Select", "Playground Project", "IT Project", "Building Project", "History Book"];
     }
 
-  
+
 
     // Add options to the purpose dropdown
-    options.forEach(function(optionText) {
+    options.forEach(function (optionText) {
       const option = document.createElement("option");
       option.text = optionText;
       option.value = optionText;
@@ -225,4 +235,3 @@
     });
   }
 </script>
-

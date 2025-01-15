@@ -8,7 +8,7 @@
 </head>
 
 <body>
-    <form id="formcheck" action="https://testsecureacceptance.cybersource.com/pay" method="post" />
+    <form id="formcheck" action="https://secureacceptance.cybersource.com/pay" method="post" />
     <?php
         foreach ($_REQUEST as $name => $value) {
             $params[$name] = $value;

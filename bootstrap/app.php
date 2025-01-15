@@ -14,6 +14,7 @@ return Application::configure(basePath: dirname(__DIR__))
         $middleware->validateCsrfTokens(except: [
             '*/products/response',
             'http://testsecureacceptance.cybersource.com/pay',
+            'http://secureacceptance.cybersource.com/pay',
             '*/payment-result',
         ]);
     })
