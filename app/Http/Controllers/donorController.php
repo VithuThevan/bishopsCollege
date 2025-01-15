@@ -31,6 +31,20 @@ class donorController extends Controller
 
     public function store2(Request $request)
     {
+
+        $donorData = $request->validate([
+            'donorName' => 'required|string|max:255',
+            'donorEmail' => 'required|email',
+            'donorPhone' => 'required|string|max:15', // Validate the phone field
+            'donorAddress' => 'required|string|max:255',
+            'donorType' => 'required|string|max:255',
+            'donationType' => 'required|string|max:255',
+            'donationPurpose' => 'required|string|max:255',
+            'amount' => 'required|numeric',
+        ]);
+
+        // $donors = donors::create(attributes: $donorData);
+
         return redirect()->route('page2', ['data' => $request->all()]);
     }
 
@@ -40,6 +54,7 @@ class donorController extends Controller
 
         // Define email subject and message based on the decision
         $emailData = [];
+        
         if ($request->input('decision') != 'ACCEPT') {
             // For unsuccessful payment
             $emailData['subject'] = 'Payment Unsuccessful';
